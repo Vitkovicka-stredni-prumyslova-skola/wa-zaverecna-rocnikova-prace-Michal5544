@@ -8,7 +8,7 @@ def home():
 
 @app.route("/about")
 def about():
-    return render_template("about.html");
+    return render_template("about.html")
 
 @app.route("/services")
 def services():
@@ -19,13 +19,13 @@ def contact():
     message = ""
 
     if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
-        text = request.form["message"]
+        name = request.form.get("name")
+        email = request.form.get("email")
+        text = request.form.get("message")
 
         message = f"Děkujeme {name}, zpráva byla odeslána."
 
     return render_template("contact.html", message=message)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port=5050)
