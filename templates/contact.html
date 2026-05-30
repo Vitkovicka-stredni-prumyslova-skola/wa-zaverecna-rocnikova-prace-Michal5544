@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kontakt
+{% endblock %}
+
+{% block content %}
+
+<h2>Kontaktujte nás</h2>
+
+<form method="POST" id="contactForm">
+
+    <input type="text"
+           name="name"
+           id="name"
+           placeholder="Vaše jméno">
+
+    <input type="email"
+           name="email"
+           id="email"
+           placeholder="Váš email">
+
+    <textarea name="message"
+              id="message"
+              placeholder="Vaše zpráva"></textarea>
+
+    <button type="submit">
+        Odeslat
+    </button>
+
+</form>
+
+<p>{{ message }}</p>
+
+{% endblock %}
